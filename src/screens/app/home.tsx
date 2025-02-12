@@ -28,10 +28,7 @@ const Home = () => {
   return (
     <View style={styles.constainer}>
       <Text>Home</Text>
-
       <ButtonTitle title='Check' onPress={onPressButton} />
-
-
     </View>
   )
 }

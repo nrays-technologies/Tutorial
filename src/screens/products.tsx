@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Text, FlatList } from "react-native";
 
 import Images from "../assets/images";
 import ItemProduct from "./components/itemProduct";
+import { useSelector } from "react-redux";
 
 
 export interface IProduct {
@@ -12,14 +13,23 @@ export interface IProduct {
 }
 
 export const data: IProduct[] = [{ "name": "beoPlay", "Price": "$1600", "img": Images.beoPlay },
-{ "name": "headPhone1", "Price": "$500", "img":  Images.headphone1},
-{ "name": "beoLit", "Price": "$1200", "img":  Images.beoLit},
+{ "name": "headPhone1", "Price": "$500", "img": Images.headphone1 },
+{ "name": "beoLit", "Price": "$1200", "img": Images.beoLit },
 { "name": "beoSound", "Price": "$1100", "img": Images.beoSound },
-{ "name": "beoPlay1", "Price": "$1500", "img":  Images.beoplay1 },
-{ "name": "headPhone", "Price": "$900", "img":  Images.headPhone },
+{ "name": "beoPlay1", "Price": "$1500", "img": Images.beoplay1 },
+{ "name": "headPhone", "Price": "$900", "img": Images.headPhone },
 ]
 
 const Products = () => {
+
+    const { limit } = useSelector((state) => state.productOptions)
+
+
+    console.log('==================================== limit');
+
+    console.log(limit);
+    console.log('====================================');
+
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -50,17 +60,18 @@ const Products = () => {
             </View>
             <Text style={styles.txtResult}>POPULAR SEARCHES</Text>
             {/* <View style={styles.itemList}> */}
-                <FlatList
-                    columnWrapperStyle={styles.columnWrapperStyle}
-                    showsVerticalScrollIndicator={false}
-                    contentContainerStyle={styles.itemList}
-                    numColumns={2}
-                    data={data}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => (
-                        <ItemProduct item={item} />
-                    )}
-                />
+            <Text>{limit}</Text>
+            <FlatList
+                columnWrapperStyle={styles.columnWrapperStyle}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.itemList}
+                numColumns={2}
+                data={data}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => (
+                    <ItemProduct item={item} />
+                )}
+            />
             {/* </View> */}
 
         </View>
@@ -135,8 +146,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#B0B3C2'
     },
     itemList: {
-        borderColor:'red',
-        borderWidth:3,
+        borderColor: 'red',
+        borderWidth: 3,
         paddingHorizontal: 35,
         gap: 24,
         flex: 1
