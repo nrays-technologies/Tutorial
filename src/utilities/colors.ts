@@ -1,6 +1,31 @@
-const ColorsApp = {
-    inactiveTab: '#575757',
-    activeTab: '#0da67d'
-}
+export const ColorsApp = {
+  theme: '#4FCB79',
+  themeDark: 'green',
+  themeLogo: '#019748',
+  theme30: '#B8ED5570',
+  cardBG: '#efffed',
+  white: '#ffffff',
+  black: '#000000',
+  black60: '#00000060',
+  underlayColor: '#FBBC0520',
+  modal: '#00000060',
+  bgButton: '#ECECEC',
+  bgTextInput: '#ECECEC',
+  // disableBtn: '#ECECEC',
+  disableBtn: '#CACACA',
+  grey6464: '#646464',
 
-export default ColorsApp;
+
+  placeHolderTxtInput: '#CACACA',
+  listSeparator: '#EEEEEE',
+  grey99: '#9D9D9D',
+  grey33: '#EEEEEE',
+  txtDescGrey: '#959595',
+  bgSwitch: '#ACACAC',
+  bgScreen: '#E5E5E5',
+  link: '#2980b9',
+  bgPin: '#D8D9D8',
+  red: 'red',
+  yellow: '#e2a03f',
+  green: '#00ab55'
+};
